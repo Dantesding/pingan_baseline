@@ -56,14 +56,6 @@ for item in data['TERMINALNO'].unique():
     num_of_state_4 = num_of_state.loc[num_of_state['CALLSTATE']==4].shape[0]/float(nsh)
     del num_of_state
 
-    #terminalno挖掘信息
-    user1 = len(str(item))
-    user2 = int(str(item)[:1])
-    user3 = int(str(item)[:2])
-    user5 = int(str(item)[:3])
-    user6 = int(str(item)[-3:])
-    user7 = int(str(item)[-2:])
-    user8 = int(str(item)[-1:])
 
     ### 地点特征
     startlong = temp.loc[0, 'LONGITUDE']
@@ -87,7 +79,8 @@ for item in data['TERMINALNO'].unique():
 
     # 所有特征
     feature = [item, num_of_trips, num_of_records,num_of_state_0,num_of_state_1,num_of_state_2,num_of_state_3,num_of_state_4,\
-                user1,user2,user3,user5,user6,user7,user8,mean_speed,var_speed,mean_height\
+                # user1,user2,user3,user5,user6,user7,user8,
+               mean_speed,var_speed,mean_height\
         ,float(hour_state[0]),float(hour_state[1]),float(hour_state[2]),float(hour_state[3]),float(hour_state[4]),float(hour_state[5])
         ,float(hour_state[6]),float(hour_state[7]),float(hour_state[8]),float(hour_state[9]),float(hour_state[10]),float(hour_state[11])
         ,float(hour_state[12]),float(hour_state[13]),float(hour_state[14]),float(hour_state[15]),float(hour_state[16]),float(hour_state[17])
@@ -166,14 +159,6 @@ for item in data['TERMINALNO'].unique():
     num_of_state_4 = num_of_state.loc[num_of_state['CALLSTATE']==4].shape[0]/float(nsh)
     del num_of_state
 
-    #terminalno挖掘信息
-    user1 = len(str(item))
-    user2 = int(str(item)[:1])
-    user3 = int(str(item)[:2])
-    user5 = int(str(item)[:3])
-    user6 = int(str(item)[-3:])
-    user7 = int(str(item)[-2:])
-    user8 = int(str(item)[-1:])
 
     ### 地点特征
     startlong = temp.loc[0, 'LONGITUDE']
@@ -197,7 +182,8 @@ for item in data['TERMINALNO'].unique():
     target = -1.0
 
     feature = [item, num_of_trips, num_of_records,num_of_state_0,num_of_state_1,num_of_state_2,num_of_state_3,num_of_state_4,\
-                user1,user2,user3,user5,user6,user7,user8,mean_speed,var_speed,mean_height\
+                # user1,user2,user3,user5,user6,user7,user8,
+               mean_speed,var_speed,mean_height\
         ,float(hour_state[0]),float(hour_state[1]),float(hour_state[2]),float(hour_state[3]),float(hour_state[4]),float(hour_state[5])
         ,float(hour_state[6]),float(hour_state[7]),float(hour_state[8]),float(hour_state[9]),float(hour_state[10]),float(hour_state[11])
         ,float(hour_state[12]),float(hour_state[13]),float(hour_state[14]),float(hour_state[15]),float(hour_state[16]),float(hour_state[17])
